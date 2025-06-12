@@ -1,6 +1,2 @@
-for i in {a..z}{a..z}
-do
-if [ $i != oo ]
-then echo $i
-fi
-done
+#!/bin/bash
+printf '%s\n' {a..z}{a..z} | grep -v '^oo$'
