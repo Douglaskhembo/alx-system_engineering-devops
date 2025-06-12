@@ -1,2 +1,2 @@
 #!/bin/bash
-while read -r line && echo "$line" && read; do  done
+while read -r line && echo "$line" && read do  done
