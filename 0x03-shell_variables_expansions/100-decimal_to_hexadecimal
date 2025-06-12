@@ -1,2 +1,2 @@
 #!/bin/bash
-printf "%x\n" "$DECIMAL"
+i=0; while read -r line; do r=$((i % 2)); if [ "$r" -eq 0 ]; then echo "$line"; fi; i=$((i + 1)); done
