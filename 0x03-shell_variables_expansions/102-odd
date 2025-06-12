@@ -1,2 +1,2 @@
 #!/bin/bash
-while read -r l; do if [ $((i++%2)) = 0 ]; then echo "$l"; fi; done
+paste - - | cut -f1
