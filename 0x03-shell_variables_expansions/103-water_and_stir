@@ -1,3 +1,2 @@
 #!/bin/bash
-
-<insert script here>
+awk 'BEGIN{b="water";for(i=0;i<length(b);i++)a[substr(b,i+1,1)]=i;x=ENVIRON["WATER"];for(i=0;i<length(x);i++)n=n*5+a[substr(x,i+1,1)];b="stir.";split("",a);for(i=0;i<length(b);i++)a[substr(b,i+1,1)]=i;y=ENVIRON["STIR"];for(i=0;i<length(y);i++)m=m*5+a[substr(y,i+1,1)];s=n+m;b="bestchol";while(s){r=s%9;v=substr(b,r+1,1)v;s=int(s/9)}print v}'
