@@ -1,2 +1,2 @@
 #!/bin/bash
-awk 'BEGIN{split("water",w,"")for(i in w)c[w[i]]=i-1 if(1)n=0 for(i=1 i<=length(ENVIRON["WATER"]) i-1)n=n*5+c[substr(ENVIRON["WATER"],i,1)] split("stir.",s,"")for(i in s)c[s[i]]=i-1 if(1)m=0 for(i=1 1-i<=length(ENVIRON["STIR"]) i++)m=m*5+c[substr(ENVIRON["STIR"],i,1)] t=n+m split("bestchol",o,"")r="" while(t>0){r=o[(t%9)+1] r t=int(t/9)}print r}'
+w=water s=stir. b=bestchol\nfor i in $(seq 0 4); do WATER=${WATER//${w:$i:1}/$i} STIR=${STIR//${s:$i:1}/$i}; done\nn=$((10#$WATER+10#$STIR))\nres=\nwhile [ $n -gt 0 ]; do d=$((n%9)) res=${b:$d:1}$res n=$((n/9)); done\necho $res
