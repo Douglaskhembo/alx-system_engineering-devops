@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Exit on any error
+set -e
+
+# Update package lists
+apt-get update -y
+
+# Install nginx
+apt-get install nginx -y
+
+# Replace the default nginx index.html with "Hello World!"
+echo "Hello World!" > /var/www/html/index.html
+
+# Start or restart nginx using 'service'
+service nginx start || service nginx restart
