@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Script to get DNS info about domain subdomains
+
+domain=$1
+subdomain=$2
+
+get_info() {
+  local full_sub=$1.$domain
+  local result
+  result=$(dig $full_sub | awk '/^;; ANSWER SECTION:$/ {getline; print}')
+  record_type=$(echo "$result" | awk '{print $4}')
+  destination=$(echo "$result" | awk '{print $5}')
+  echo "The subdomain $1 is a $record_type record and points to $destination"
+}
+
+if [ -n "$domain" ] && [ -z "$subdomain" ]; then
+  for sub in www lb-01 web-01 web-02; do
+    get_info $sub
+  done
+elif [ -n "$domain" ] && [ -n "$subdomain" ]; then
+  get_info $subdomain
+fi
