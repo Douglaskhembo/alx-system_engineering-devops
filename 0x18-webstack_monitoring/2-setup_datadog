@@ -1,0 +1,13 @@
+# Monitor System Metrics with Datadog
+
+## Read Requests per Second
+- Metric: `system.io.r_s`
+- Host: 1300295-web-01
+- Threshold: >100 reads/sec for 5 minutes
+- Alert message: High disk read activity detected on host.
+
+## Write Requests per Second
+- Metric: `system.io.w_s`
+- Host: 1300295-web-01
+- Threshold: >100 writes/sec for 5 minutes
+- Alert message: High disk write activity detected on host.
